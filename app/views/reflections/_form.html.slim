@@ -1,0 +1,14 @@
+= simple_form_for(@reflection) do |f|
+  = f.error_notification
+
+  .form-inputs
+    .row
+      .col-xs-12
+        = f.input :entry_type, collection: ['Journal', 'Idea'], label: false, prompt: 'Type', class: 'form-control'
+      .col-xs-12
+        = f.input :feels, collection: -1..1, label: false, class: 'form-control'
+      .col-xs-12
+        = f.input :body, label: false, placeholder: 'Pls respond', class: 'form-control'
+
+  .form-actions
+    = f.button :submit, 'Save', class: 'btn btn-secondary'

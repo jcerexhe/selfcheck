@@ -1,0 +1,27 @@
+h1 Listing reflections
+
+table.table
+  thead
+    tr
+      th Type
+      th Feels
+      th Body
+      th Ip address
+      th Latitude
+      th Longitude
+      th
+      th
+      th
+
+  tbody
+    - @reflections.each do |reflection|
+      tr
+        td = reflection.entry_type
+        td = reflection.feels
+        td = reflection.body
+        td = reflection.ip_address
+        td = reflection.latitude
+        td = reflection.longitude
+        td = link_to 'Show', reflection
+        td = link_to 'Edit', edit_reflection_path(reflection)
+        td = link_to 'Destroy', reflection, data: {:confirm => 'Are you sure?'}, :method => :delete

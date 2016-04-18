@@ -1,0 +1,15 @@
+nav.navbar.navbar-light.bg-faded
+  button.navbar-toggler.hidden-sm-up type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" &#9776;
+  div.collapse.navbar-toggleable-xs#exCollapsingNavbar2
+    a.navbar-brand href="/" SelfRef
+    ul.nav.navbar-nav
+      - if user_signed_in?
+        li.nav-item
+          = link_to 'New', new_reflection_path, class: 'nav-link'
+        li.nav-item
+          = link_to 'History', reflections_path, class: 'nav-link'
+        li.nav-item
+          = link_to 'Log out', destroy_user_session_path, class: 'nav-link'
+      - else
+        li.nav-item
+          = link_to 'Sign up', new_user_registration_path, class: 'nav-link'
