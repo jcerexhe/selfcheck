@@ -14,6 +14,6 @@
  *= require_self
  */
 
-.navbar {
+.navbar, .filter-btns {
   margin-bottom: 40px;
 }

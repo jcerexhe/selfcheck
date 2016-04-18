@@ -1,22 +1,11 @@
 p#notice = notice
 
-p
-  strong Type:
-  = @reflection.entry_type
-p
-  strong Feels:
-  = @reflection.feels
-p
-  strong Body:
-  = @reflection.body
-p
-  strong Ip address:
-  = @reflection.ip_address
-p
-  strong Latitude:
-  = @reflection.latitude
-p
-  strong Longitude:
-  = @reflection.longitude
-
-= link_to 'Edit', edit_reflection_path(@reflection), class: 'btn btn-secondary'
+.row
+  .col-xs-12.col-md-8
+    p
+      em = @reflection.created_at.strftime('%d %B')
+    p
+      strong> = @reflection.entry_type
+      <span class="label label-default label-pill">#{@reflection.feels}</span>
+    blockquote.blockquote
+      = @reflection.body
